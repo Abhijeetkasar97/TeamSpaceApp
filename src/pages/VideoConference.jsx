@@ -6,19 +6,17 @@ const VideoConference = () => {
   const [isCamOn, setIsCamOn] = useState(true);
 
   return (
-    <div className="relative min-h-screen">
-      <ParticlesBackground />
-      <div className="relative z-10 video-container bg-orange-100 min-h-screen p-6 bg-opacity-90 backdrop-blur-md">
+    
+      <div className="w-full bg-gray-900/50 text-white rounded-2xl shadow-2xl p-8 border border-gray-800 m-6">
         <h2 className="text-4xl font-bold text-center text-orange-500 mb-6 drop-shadow-lg">
           Video Conference
         </h2>
 
-        {/* Video Grid */}
         <div className="video-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
-          {[...Array(6)].map((_, index) => (
+          {[...Array(8)].map((_, index) => (
             <div
               key={index}
-              className="video-box bg-gray-900 rounded-lg shadow-2xl flex items-center justify-center text-white text-2xl p-6 border border-orange-500"
+              className="w-full bg-gray-900/50 text-white rounded-2xl shadow-2xl p-8 border border-gray-800 m-6"
             >
               User {index + 1}
             </div>
@@ -46,7 +44,7 @@ const VideoConference = () => {
           </button>
         </div>
       </div>
-    </div>
+   
   );
 };
 

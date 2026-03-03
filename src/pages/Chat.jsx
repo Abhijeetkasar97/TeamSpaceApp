@@ -27,26 +27,26 @@ const Chat = () => {
     <div className="relative w-full h-screen">
       <ParticlesBackground />
       <div className="absolute inset-0 flex justify-center items-center p-6">
-        <div className="w-full max-w-lg bg-gray-900 text-orange-500 rounded-lg shadow-lg p-6">
+        <div className="w-full bg-gray-900/50 text-white rounded-2xl shadow-2xl p-8 border border-gray-800 m-6">
           <h2 className="text-2xl font-bold">Team Chat</h2>
-          <div className="mt-4 bg-gray-800 p-4 rounded-lg h-64 overflow-y-auto">
+          <div className="w-full bg-gray-900/50 text-white rounded-2xl shadow-2xl p-8 border border-gray-800 m-6">
             {messages.map((msg, index) => (
               <div key={index} className={`message ${msg.sender} text-gray-300 mb-2`}>
                 {msg.text}
               </div>
             ))}
           </div>
-          <div className="mt-4 flex gap-2">
+          <div className="w-full bg-gray-900/50 text-white rounded-2xl shadow-2xl p-8 border border-gray-800 m-6">
             <input
               type="text"
               placeholder="Type a message..."
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
-              className="flex-grow p-2 rounded bg-gray-700 text-white"
+              className="w-full bg-gray-900/50 text-white rounded-2xl shadow-2xl p-8 border border-gray-800 m-6"
             />
             <button
               onClick={sendMessage}
-              className="bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700"
+              className="mb-4 px-4 py-2 bg-orange-500/50 text-white rounded-lg hover:bg-orange-600"
             >
               Send
             </button>

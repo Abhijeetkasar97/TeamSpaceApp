@@ -79,23 +79,23 @@ const AnalyticsDashboard = () => {
   }, []);
 
   return (
-    <div className="p-6 bg-gray-900 text-orange-500 rounded-lg shadow-lg">
+    <div className="w-full bg-gray-900/50 text-white rounded-2xl shadow-2xl p-8 border border-gray-800">
       <h2 className="text-2xl font-bold">Analytics Dashboard</h2>
       <p>Track your team's performance with insightful analytics.</p>
-      <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-gray-800 p-4 rounded-lg">
+      <div className=" mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="w-full bg-gray-900/50 text-white rounded-2xl shadow-2xl p-8 border border-gray-800">
           <h3 className="text-xl">User Engagement</h3>
           <Line data={userEngagementData} />
         </div>
-        <div className="bg-gray-800 p-4 rounded-lg">
+        <div className="w-full bg-gray-900/50 text-white rounded-2xl shadow-2xl p-8 border border-gray-800">
           <h3 className="text-xl">Revenue Growth</h3>
           <Bar data={revenueData} />
         </div>
-        <div className="bg-gray-800 p-4 rounded-lg">
+        <div className="w-full bg-gray-900/50 text-white rounded-2xl shadow-2xl p-8 border border-gray-800">
           <h3 className="text-xl">Device Usage</h3>
           <Pie data={deviceUsageData} />
         </div>
-        <div className="bg-gray-800 p-4 rounded-lg">
+        <div className="w-full bg-gray-900/50 text-white rounded-2xl shadow-2xl p-8 border border-gray-800">
           <h3 className="text-xl">Traffic Sources</h3>
           <Radar data={trafficSourceData} />
         </div>

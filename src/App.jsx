@@ -15,13 +15,13 @@ import Notifications from "./pages/Notifications";
 import { AuthProvider } from "./context/AuthContext";
 import ParticlesBackground from "./ParticlesBackground";
 import "./index.css";
-
+import "./App.css"
 function App() {
   return (
     <AuthProvider>
-      <ParticlesBackground /> {/* ✅ Full-page particles effect */}
+      <ParticlesBackground /> 
       
-      <div className="relative z-10 min-h-screen flex flex-col bg-black bg-opacity-90 text-white">
+      <div className="relative z-10 min-h-screen flex flex-col">
         <Navbar />
         <div className="container mx-auto p-4 flex-grow">
           <Routes>

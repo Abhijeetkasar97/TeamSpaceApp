@@ -53,7 +53,7 @@ const TaskBoard = () => {
     }));
 
     return (
-      <div ref={drop} className="taskboard-column bg-gray-800 p-4 rounded-lg">
+      <div ref={drop} className="w-full bg-gray-900/50 text-white rounded-2xl shadow-2xl p-8 border border-gray-800 m-6">
         <h3 className="text-xl text-white mb-2">{category}</h3>
         {tasks.filter((task) => task.status === category).map((task) => (
           <Task key={task.id} task={task} />
@@ -63,20 +63,26 @@ const TaskBoard = () => {
   };
 
   const addTask = () => {
-    const title = prompt("Enter task title:");
-    if (title) {
-      setTasks([...tasks, { id: tasks.length + 1, title, status: "To Do" }]);
-    }
-  };
+  const title = prompt("Enter task title:");
+  if (!title) return;
+
+  const newTasks = taskCategories.map((category, index) => ({
+    id: Date.now() + index,
+    title,
+    status: category,
+  }));
+
+  setTasks((prevTasks) => [...prevTasks, ...newTasks]);
+};
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="taskboard-container p-6 bg-gray-900 text-orange-500 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold">Task Board</h2>
-        <p className="taskboard-description mb-4">
+      <div className="w-full bg-gray-900/50 text-white rounded-2xl shadow-2xl p-8 border border-gray-800 m-6">
+        <h2 className="text-4xl font-bold text-center">Task Board</h2>
+        <p className="text-center">
           Manage and track your tasks with a Kanban-style workflow.
         </p>
-        <button onClick={addTask} className="mb-4 px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600">
+        <button onClick={addTask} className="mb-4 px-4 py-2 bg-orange-500/50 text-white rounded-lg hover:bg-orange-600">
           Add Task
         </button>
         <div className="taskboard-columns grid grid-cols-4 gap-4">
